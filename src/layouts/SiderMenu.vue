@@ -44,6 +44,13 @@ export default {
   },
   watch: {
     "$route.path": function(val) {
+      console.log("val", val);
+      console.log(
+        "this.selectedKeysMap",
+        this.selectedKeysMap,
+        this.selectedKeysMap[val]
+      );
+      console.log("this.openKeysMap", this.openKeysMap, this.openKeysMap[val]);
       this.selectedKeys = this.selectedKeysMap[val];
       this.openKeys = this.collapsed ? [] : this.openKeysMap[val];
     },
@@ -62,53 +69,17 @@ export default {
     };
   },
   methods: {
-    getMenuData(routes = [], parentKeys = [], selectedKeys) {
-      const menuData = [];
-      for (let menu of routes) {
-        if (menu.meta && menu.meta.authority && !check(menu.meta.authority))
-          break;
-        if (menu.name && !menu.hideInMenu) {
-          this.openKeysMap[menu.path] = parentKeys;
-          this.selectedKeysMap[menu.path] = [selectedKeys || menu.path];
-          const newMenu = { ...menu };
-          delete newMenu.children;
-          if (menu.children && !menu.hideChildrenInMenu) {
-            newMenu.children = this.getMenuData(menu.children, [
-              ...parentKeys,
-              menu.path
-            ]);
-          } else {
-            this.getMenuData(
-              menu.children,
-              selectedKeys ? parentKeys : [...parentKeys, menu.path],
-              selectedKeys || menu.path
-            );
-          }
-          menuData.push(newMenu);
-        } else if (
-          !menu.hideInMenu &&
-          !menu.hideChildrenInMenu &&
-          menu.children
-        ) {
-          menuData.push(
-            ...this.getMenuData(menu.children, [...parentKeys, menu.path])
-          );
-        }
-      }
-
-      return menuData;
-    }
     // getMenuData(routes = [], parentKeys = [], selectedKeys) {
     //   const menuData = [];
     //   for (let menu of routes) {
     //     if (menu.meta && menu.meta.authority && !check(menu.meta.authority))
     //       break;
-    //     if (menu.name && (menu.meta && !menu.meta.hideInMenu)) {
+    //     if (menu.name && !menu.hideInMenu) {
     //       this.openKeysMap[menu.path] = parentKeys;
     //       this.selectedKeysMap[menu.path] = [selectedKeys || menu.path];
     //       const newMenu = { ...menu };
     //       delete newMenu.children;
-    //       if (menu.children && (menu.meta && !menu.meta.hideChildrenInMenu)) {
+    //       if (menu.children && !menu.hideChildrenInMenu) {
     //         newMenu.children = this.getMenuData(menu.children, [
     //           ...parentKeys,
     //           menu.path
@@ -122,8 +93,7 @@ export default {
     //       }
     //       menuData.push(newMenu);
     //     } else if (
-    //       menu.meta &&
-    //       !menu.meta.hideInMenu &&
+    //       !menu.hideInMenu &&
     //       !menu.hideChildrenInMenu &&
     //       menu.children
     //     ) {
@@ -135,6 +105,42 @@ export default {
 
     //   return menuData;
     // }
+
+    getMenuData(routes = [], parentKeys = [], selectedKeys) {
+      const menuData = [];
+      for (let menu of routes) {
+        if (menu.meta && menu.meta.authority && !check(menu.meta.authority))
+          break;
+        if (menu.name && !menu.meta.hideInMenu) {
+          this.openKeysMap[menu.path] = parentKeys;
+          this.selectedKeysMap[menu.path] = [selectedKeys || menu.path];
+          const newMenu = { ...menu };
+          delete newMenu.children;
+          if (menu.children && !menu.meta.hideChildrenInMenu) {
+            newMenu.children = this.getMenuData(menu.children, [
+              ...parentKeys,
+              menu.path
+            ]);
+          } else {
+            this.getMenuData(
+              menu.children,
+              selectedKeys ? parentKeys : [...parentKeys, menu.path],
+              selectedKeys || menu.path
+            );
+          }
+          menuData.push(newMenu);
+        } else if (
+          !menu.meta.hideInMenu &&
+          !menu.hideChildrenInMenu &&
+          menu.children
+        ) {
+          menuData.push(
+            ...this.getMenuData(menu.children, [...parentKeys, menu.path])
+          );
+        }
+      }
+      return menuData;
+    }
   }
 };
 </script>
