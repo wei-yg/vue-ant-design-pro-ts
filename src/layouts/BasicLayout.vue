@@ -1,6 +1,6 @@
 <template>
   <div :class="[`nav-theme-${navTheme}`, `nav-layout-${navLayout}`]">
-    <a-layout id="components-layout-demo-side" style="min-height: 100vh">
+    <a-layout id="components-layout-demo-side" style="min-height: 100vh;">
       <a-layout-sider
         v-if="navLayout === 'left'"
         :theme="navTheme"
@@ -8,12 +8,15 @@
         v-model="collapsed"
         :trigger="null"
         width="256px"
+        style="box-shadow:2px 0 6px rgba(0,21,41,.35);"
       >
         <div class="logo">软小荐</div>
         <SiderMenu :theme="navTheme" :collapsed="collapsed" />
       </a-layout-sider>
       <a-layout>
-        <a-layout-header style="background: #fff; padding: 0">
+        <a-layout-header
+          style="background: #fff; padding: 0;box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);height: 64px;"
+        >
           <a-icon
             class="trigger"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
