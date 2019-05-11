@@ -120,7 +120,7 @@ const routes = [
           {
             path: "/form/step-form",
             name: "stepform",
-            meta: { title: "分布表单", hideChildrenInMenu:true },
+            meta: { title: "分步表单", hideChildrenInMenu:true },
             component: () =>
               import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/index.vue"),
             children: [
@@ -130,18 +130,21 @@ const routes = [
               },
               {
                 path: "/form/step-form/info",
+                meta: { title:"第一步" },
                 name: "info",
                 component: () =>
                   import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/Step1.vue")
               },
               {
                 path: "/form/step-form/confirm",
+                meta: { title:"第二步" },
                 name: "confirm",
                 component: () =>
                   import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/Step2.vue")
               },
               {
                 path: "/form/step-form/result",
+                meta: { title:"第三步" },
                 name: "result",
                 component: () =>
                   import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/Step3.vue")
