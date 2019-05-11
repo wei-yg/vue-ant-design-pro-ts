@@ -4,4 +4,8 @@
   </div>
 </template>
 
-<style lang="less"></style>
+<style lang="less">
+* {
+  box-sizing: border-box;
+}
+</style>

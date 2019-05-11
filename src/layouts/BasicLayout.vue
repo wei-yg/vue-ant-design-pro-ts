@@ -14,9 +14,7 @@
         <SiderMenu :theme="navTheme" :collapsed="collapsed" />
       </a-layout-sider>
       <a-layout>
-        <a-layout-header
-          style="background: #fff; padding: 0;box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);height: 64px;"
-        >
+        <a-layout-header class="ant-header">
           <a-icon
             class="trigger"
             :type="collapsed ? 'menu-unfold' : 'menu-fold'"
@@ -24,7 +22,7 @@
           ></a-icon>
           <Header />
         </a-layout-header>
-        <a-layout-content style="margin: 0 16px">
+        <a-layout-content>
           <router-view></router-view>
         </a-layout-content>
         <a-layout-footer style="text-align: center">
@@ -84,5 +82,13 @@ export default class BasicLayout extends Vue {
 }
 .nav-theme-dark >>> .logo {
   color: #fff;
+}
+.ant-header {
+  background: #fff;
+  padding: 0;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  height: 65px;
+  position: relative;
+  z-index: 2;
 }
 </style>

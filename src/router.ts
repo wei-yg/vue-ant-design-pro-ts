@@ -130,21 +130,21 @@ const routes = [
               },
               {
                 path: "/form/step-form/info",
-                meta: { title:"第一步" },
+                meta: { title:"第一步", desc:"填写转账信息", step:0 },
                 name: "info",
                 component: () =>
                   import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/Step1.vue")
               },
               {
                 path: "/form/step-form/confirm",
-                meta: { title:"第二步" },
+                meta: { title:"第二步", desc:"确认转账信息", step:1  },
                 name: "confirm",
                 component: () =>
                   import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/Step2.vue")
               },
               {
                 path: "/form/step-form/result",
-                meta: { title:"第三步" },
+                meta: { title:"第三步",desc:"完成", step:2  },
                 name: "result",
                 component: () =>
                   import(/* webpackChunkName: "form" */ "./views/Forms/StepForm/Step3.vue")

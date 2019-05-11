@@ -3,7 +3,7 @@ import App from "./App.vue";
 import router from "./router";
 
 import store from "./store";
-import { Button, Layout, Icon, Drawer, Radio, Menu,Breadcrumb } from "ant-design-vue";
+import { Button, Layout, Icon, Drawer, Radio, Menu, Breadcrumb, Steps, Form, Input, Select } from "ant-design-vue";
 import Authorized from "./components/Authorized.vue";
 
 Vue.config.productionTip = false;
@@ -15,6 +15,10 @@ Vue.use(Drawer);
 Vue.use(Radio);
 Vue.use(Menu);
 Vue.use(Breadcrumb);
+Vue.use(Steps);
+Vue.use(Form);
+Vue.use(Input);
+Vue.use(Select);
 
 Vue.component("Authorized", Authorized);
 

@@ -15,7 +15,7 @@
 import { Component, Prop, Vue, Watch } from "vue-property-decorator";
 
 @Component
-export default class Breadcrumb extends Vue {
+export default class MyBreadcrumb extends Vue {
   private matched: Array<any> = [];
 
   @Watch("$route.path")

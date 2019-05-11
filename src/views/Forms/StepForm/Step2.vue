@@ -1,5 +1,8 @@
 <template>
-  <div>Step2</div>
+  <div>
+    <div>----------</div>
+    <div>mima</div>
+  </div>
 </template>
 
 <script lang="ts">
