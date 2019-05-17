@@ -9,7 +9,7 @@
       width="300px"
     >
       <template v-slot:handle>
-        <div class="handle" @click="visible = !visible">
+        <div class="setting-drawer-handle" @click="visible = !visible">
           <a-icon :type="visible ? 'close' : 'setting'"></a-icon>
         </div>
       </template>
@@ -54,14 +54,16 @@ export default class SettingDrawer extends Vue {
 }
 </script>
 
-<style scoped>
-.handle {
+<style scoped lang="less">
+@import "~ant-design-vue/lib/style/themes/default.less";
+
+.setting-drawer-handle {
   position: absolute;
   top: 240px;
   right: 300px;
   width: 48px;
   height: 48px;
-  background-color: #1890ff;
+  background-color: @primary-color;
   color: white;
   font-size: 20px;
   line-height: 48px;
