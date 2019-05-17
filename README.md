@@ -26,3 +26,12 @@ npm run test
 ```
 npm run lint
 ```
+
+### 更新日志
+
+#### 2019-5-17
+##### 1.添加主题配置
+###### vue.config.js
+
+##### 2.添加图标管理 
+###### iconFont main.ts
