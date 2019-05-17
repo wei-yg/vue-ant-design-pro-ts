@@ -4,7 +4,7 @@ module.exports = {
     loaderOptions: {
       less: {
         modifyVars: {
-          "primary-color": "#1DA57A"
+          "primary-color": "#1DA57A" // 默认主题颜色
           // "link-color": "#1DA57A",
           // "border-radius-base": "2px"
         },
