@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:20px">
+  <div style="padding:30px">
     <p>{{ $t("message")["app.dashboard.analysis.timeLabel"] }}</p>
     <a-date-picker></a-date-picker>
   </div>
