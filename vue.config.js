@@ -1,5 +1,8 @@
 const path = require("path");
+
+const { DEPLOY_DIR } = process.env;
 module.exports = {
+  publicPath: DEPLOY_DIR || "/", //如果有自定义部署路径
   css: {
     loaderOptions: {
       less: {
