@@ -1,5 +1,5 @@
 # 一个基于VUE / ant-design-pro TS的简易骨架
-#### demo https://wei-yg.github.io/vue-ant-ts.github.io
+#### demo https://wei-yg.github.io/vue-ant-design-pro-ts/dist/
 ## vue-ant-design-pro-ts
 
 ## Project setup
@@ -35,3 +35,9 @@ npm run lint
 
 ##### 2.添加图标管理 
 ###### iconFont main.ts
+
+#### 2019-5-18
+##### 1.添加国际化
+##### 2.更新demo地址
+##### 3.添加API和输出webpack配置
+###### package.json betterScripts
