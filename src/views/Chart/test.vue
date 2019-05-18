@@ -1,5 +1,6 @@
 <template>
   <div>
+    <!-- {{ $t("message")["app.dashboard.analysis.timeLabel"] }} -->
     <Chart :option="chartData" style="height:400px" />
   </div>
 </template>

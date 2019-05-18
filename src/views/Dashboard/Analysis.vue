@@ -1,6 +1,7 @@
 <template>
-  <div>
-    <p>1231231231231</p>
+  <div style="padding:20px">
+    <p>{{ $t("message")["app.dashboard.analysis.timeLabel"] }}</p>
+    <a-date-picker></a-date-picker>
   </div>
 </template>
 
