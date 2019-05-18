@@ -54,7 +54,7 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "layout" */ "./layouts/BasicLayout.vue"),
     children: [
-      //
+      // dashboard
       {
         path: "/",
         redirect: "/dashboard/analysis"
@@ -80,6 +80,7 @@ const routes = [
         ]
       },
       {
+        // 图表
         path: "/chart",
         name: "chart",
         meta: { icon: "dashboard", title: "数据图" },

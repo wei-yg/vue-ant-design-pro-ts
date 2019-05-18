@@ -25,7 +25,7 @@
             "command": "vue-cli-service build",
             "env": {
                 "API_ENV": "dev",
-                "DEPLOY_DIR": "https://wei-yg.github.io/vue-ant-design-pro-ts/dist/"
+                "DEPLOY_DIR": "/"
             }
         }
     },
