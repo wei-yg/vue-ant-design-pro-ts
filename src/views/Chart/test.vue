@@ -19,7 +19,7 @@ export default class ChartTest extends Vue {
   private interval: any;
   private chartData: any = {
     title: {
-      text: "ECharts示例"
+      text: "ECharts 示例"
     },
     tooltip: {},
     legend: {
